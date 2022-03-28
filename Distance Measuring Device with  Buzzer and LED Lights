@@ -1,0 +1,67 @@
+int trigPin= 12;
+int echoPin= 11;
+
+int red=2;
+int yellow =3;
+int green=4;
+int buzzer;
+
+
+long duration;
+float cm;
+float inches;
+
+
+void setup(){
+  
+Serial.begin (9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+  
+ pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);   
+  
+}
+
+
+
+void loop(){
+digitalWrite(trigPin, LOW);
+delayMicroseconds(5);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+             
+duration= pulseIn(echoPin,HIGH);          
+             
+cm = (duration/2) / 29.1;
+inches = (duration/2) / 74;
+             
+
+Serial.print(inches);
+Serial.print("in, ");           
+Serial.print(cm);
+Serial.print("cm");
+Serial.println();
+  
+if(cm <=10)
+{
+  digitalWrite(red, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, LOW);
+  digitalWrite(buzzer, HIGH);
+}
+  if(cm >=11 && cm <20 )
+{
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(green, LOW);
+}
+   if(cm >20)
+{
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, HIGH);
+}
+}
