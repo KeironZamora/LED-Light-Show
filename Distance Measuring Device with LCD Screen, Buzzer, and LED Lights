@@ -1,0 +1,75 @@
+#include <LiquidCrystal.h> // includes the LiquidCrystal Library 
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+int trigPin = 10;
+int echoPin = 9;
+
+int red=8;
+int yellow =7;
+int green=6;
+int buzzer;
+
+float cm;
+float inches;
+long duration;
+
+void setup(){
+lcd.begin(16, 2);
+
+  Serial.begin (9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+        
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);   
+}
+
+void loop(){
+digitalWrite(trigPin, LOW);
+delay(2);
+digitalWrite(trigPin, HIGH);
+delay(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+  
+cm = (duration/2) / 29.1;
+inches = (duration/2) / 74;
+  
+if(cm <=10)
+{
+  digitalWrite(red, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, LOW);
+  digitalWrite(buzzer, HIGH);
+}
+  if(cm >=11 && cm <20 )
+{
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(green, LOW);
+}
+   if(cm >20)
+{
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, HIGH);
+
+lcd.setCursor(0,0);
+lcd.clear();
+lcd.print("D=");
+lcd.print(cm);
+lcd.print("cm");
+lcd.setCursor(0,1);
+lcd.print(inches);
+lcd.print("in");
+delay(200);
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+delay(1000);
+}
+}
