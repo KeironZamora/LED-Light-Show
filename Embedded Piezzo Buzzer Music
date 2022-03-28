@@ -1,0 +1,215 @@
+int currentSpeaker = 13;
+
+void setup() { 
+
+  	Serial.begin(9600);
+  
+	pinMode(13, OUTPUT);
+}
+
+void play(float hz, int wait) {
+  tone(13, hz, 1000);
+  delay(200);
+  noTone(13);
+  delay(wait);
+}
+
+int userinput;
+
+  void CoffinDance() {
+    
+  play(329, 200); 
+  play(329, 70);  
+  play(493, 100); 
+  play(440, 200); 
+  play(392, 200); 
+  play(369.99, 100); 
+  play(369.99, 100);
+  play(369.99, 120); 
+  play(440, 150); 
+  play(392, 80); 
+  play(369.99, 100); 
+  play(329, 150); 
+  play(246.94, 150); 
+  
+  
+  play(392, 70); 
+  play(369.99, 70); 
+  play(392, 70); 
+  play(369.99, 70); 
+  play(392, 70); 
+  
+  
+  play(329, 150); 
+  play(246.94, 150); 
+  
+  
+  play(392, 70); 
+  play(369.99, 70); 
+  play(392, 70);
+  play(369.99, 70); 
+  play(392, 70); 
+  
+}
+
+void Allstar(){
+
+  play(392, 200); 
+  play(587.33, 70);  
+  play(493.88, 100); 
+  play(493.88, 300); 
+  play(440, 100); 
+  play(392, 200); 
+  
+  play(392, 130); 
+  play(523.25, 200); 
+  play(493.88, 70); 
+  play(493.88, 70); 
+  play(440, 70); 
+  play(440, 70); 
+  play(392, 200); 
+  
+  play(392, 70); 
+  play(523.25, 70); 
+  play(493.88, 70); 
+  play(493.88, 70); 
+  play(440, 70); 
+ 
+  play(440, 70); 
+  play(392, 70);
+  
+  play(440, 70); 
+  play(329.63, 1000); 
+
+}
+
+void Christmas() {
+ 
+  play(523,4); //1
+  play(698,4); play(698,8); play(784, 8); play(698,8); play(659, 8);
+  play(587,4); play(587,4); play(587,4);
+  play(784, 4); play(784, 8); play(880,8); play(784, 8); play(698,8);
+  play(659, 4); play(523,4); play(523,4);
+  play(880,4); play(880,8); play(932,8); play(880,8); play(784, 8);
+  play(698,4); play(587,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+
+  play(698,2); play(523,4); //8 
+  play(698,4); play(698,8); play(784, 8); play(698,8); play(659, 8);
+  play(587,4); play(587,4); play(587,4);
+  play(784, 4); play(784, 8); play(880,8); play(784, 8); play(698,8);
+  play(659, 4); play(523,4); play(523,4);
+  play(880,4); play(880,8); play(932,8); play(880,8); play(784, 8);
+  play(698,4); play(587,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2); play(523,4);
+
+  play(698,4); play(698,4); play(698,4);//17
+  play(659, 2); play(659, 4);
+  play(698,4); play(659, 4); play(587,4);
+  play(523,2); play(880,4);
+  play(932,4); play(880,4); play(784, 4);
+  play(1047,4); play(523,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2); play(523,4); 
+  play(698,4); play(698,8); play(784, 8); play(698,8); play(659, 8);
+  play(587,4); play(587,4); play(587,4);
+  
+  play(784, 4); play(784, 8); play(880,8); play(784, 8); play(698,8); //27
+  play(659, 4); play(523,4); play(523,4);
+  play(880,4); play(880,8); play(932,8); play(880,8); play(784, 8);
+  play(698,4); play(587,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2); play(523,4);
+  play(698,4); play(698,4); play(698,4);
+  play(659, 2); play(659, 4);
+  play(698,4); play(659, 4); play(587,4);
+  
+  play(523,2); play(880,4);//36
+  play(932,4); play(880,4); play(784, 4);
+  play(1047,4); play(523,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2); play(523,4); 
+  play(698,4); play(698,8); play(784, 8); play(698,8); play(659, 8);
+  play(587,4); play(587,4); play(587,4);
+  play(784, 4); play(784, 8); play(880,8); play(784, 8); play(698,8); 
+  play(659, 4); play(523,4); play(523,4);
+  
+  play(880,4); play(880,8); play(932,8); play(880,8); play(784, 8);//45
+  play(698,4); play(587,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2); play(523,4);
+  play(698,4); play(698,8); play(784, 8); play(698,8); play(659, 8);
+  play(587,4); play(587,4); play(587,4);
+  play(784, 4); play(784, 8); play(880,8); play(784, 8); play(698,8);
+  play(659, 4); play(523,4); play(523,4);
+  
+  play(880,4); play(880,8); play(932,8); play(880,8); play(784, 8); //53
+  play(698,4); play(587,4); play(523,8); play(523,8);
+  play(587,4); play(784, 4); play(659, 4);
+  play(698,2);
+  
+  
+}
+
+void Mario(){
+   play(262, 12); play(523,12); play(523,12); play(440,12); play(233,12); play(466, 12); 0; 0;
+ play(262, 12); play(523,12); play(523,12); play(440,12);  play(233,12); play(466, 12); 0; 0;
+ play(175,12); play(349, 12); play(147, 12); play(294, 12); play(156, 12); play(311,12); 0;
+ play(175,12); play(349, 12); play(147, 12); play(294, 12); play(156, 12); play(311,12); 0;
+0; play(311,12); play(277,12); play(294, 12);
+ play(277,12); play(311,12); play(311,6); play(208,5); play(196,18); play(277,18);
+ play(262,6); play(370,6); play(349, 6); play(165,6); play(466, 6); play(440,6);
+ play(415,18); play(311,18); play(247,18);  play(233,18); play(523,18); play(208,18); 
+ play(233,12); play(523,12); play(208,12); 0; 0; 0;
+
+
+  
+}  
+
+void Froggy(){
+
+ play(294,8); 8; play(349, 6); play(294,16); 16; play(294,16); play(392,8); play(294,8); play(262,8);
+
+ play(294,8); 8; play(440,6); play(294,16); 16; play(294,16); play(466,8); play(440,8); play(349, 8);
+
+ play(294,8); play(440,8); play(587,8); play(294,16); play(262,16); 16; play(262,16); play(220,8); play(330,8); play(294,2);
+
+ 8; play(294, 4);play(294, 4);
+  
+}
+
+void loop(){
+
+  while (Serial.available() == 0){
+}
+
+	int userinput = Serial.parseInt();
+
+switch (userinput) {
+	case 1:
+  CoffinDance();
+  break;
+  
+  case 2:
+  Allstar();
+  break;
+  
+  case 3:
+  Christmas();
+  break;
+  
+  case 4:
+  Mario();
+  break;
+  
+  case 5:
+  Froggy();
+  break;
+  
+  
+  default:
+  
+  Serial.println(" Selected Feature Does Not Exist");
+}
+}
